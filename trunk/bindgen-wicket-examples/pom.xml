@@ -3,7 +3,7 @@
  <parent>
   <groupId>org.bindgen.wicket</groupId>
   <artifactId>bindgen-wicket-parent</artifactId>
-  <version>1.0</version>
+  <version>1.0-SNAPSHOT</version>
  </parent>
  <artifactId>bindgen-wicket-examples</artifactId>
  <packaging>war</packaging>
@@ -19,7 +19,7 @@
   <dependency>
    <groupId>org.bindgen.wicket</groupId>
    <artifactId>bindgen-wicket</artifactId>
-   <version>1.0</version>
+   <version>1.0-SNAPSHOT</version>
   </dependency>
 <!--  WICKET DEPENDENCIES -->
   <dependency>
