@@ -113,4 +113,10 @@
    <url>http://maven-annotation-plugin.googlecode.com/svn/trunk/mavenrepo</url>
   </pluginRepository>
  </pluginRepositories>
+ <distributionManagement>
+  <repository>
+   <id>local</id>
+   <url>file:../bindgen-wicket-maven2</url>
+  </repository>
+ </distributionManagement>
 </project>
