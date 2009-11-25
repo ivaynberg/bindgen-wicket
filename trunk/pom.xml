@@ -10,6 +10,17 @@
   <module>bindgen-wicket</module>
   <module>bindgen-wicket-examples</module>
  </modules>
+ <scm>
+  <connection>scm:svn:http://bindgen-wicket.googlecode.com/svn/trunk</connection>
+  <developerConnection>scm:svn:https://bindgen-wicket.googlecode.com/svn/trunk</developerConnection>
+  <url>http://bindgen-wicket.googlecode.com/svn/trunk</url>
+ </scm>
+ <licenses>
+  <license>
+   <name>The Apache Software License, Version 2.0</name>
+   <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+  </license>
+ </licenses>
  <dependencyManagement>
   <dependencies>
    <dependency>
