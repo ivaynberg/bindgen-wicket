@@ -53,7 +53,7 @@
  </dependencyManagement>
  <properties>
   <wicket.version>1.4.3</wicket.version>
-  <bindgen.version>2.5</bindgen.version>
+  <bindgen.version>2.22</bindgen.version>
  </properties>
  <build>
   <resources>
