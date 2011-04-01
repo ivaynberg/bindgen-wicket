@@ -115,6 +115,10 @@
  </build>
  <repositories>
   <repository>
+    <id>org.jboss</id>
+    <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+   </repository>
+  <repository>
    <id>org.bindgen</id>
    <name>Bindgen Repository</name>
    <layout>default</layout>
