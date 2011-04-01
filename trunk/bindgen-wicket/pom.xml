@@ -3,7 +3,7 @@
  <parent>
   <groupId>org.bindgen.wicket</groupId>
   <artifactId>bindgen-wicket-parent</artifactId>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
  </parent>
  <artifactId>bindgen-wicket</artifactId>
  <packaging>jar</packaging>
