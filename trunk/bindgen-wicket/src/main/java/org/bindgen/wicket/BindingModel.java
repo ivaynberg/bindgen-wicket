@@ -81,89 +81,83 @@ import org.bindgen.BindingRoot;
  * @param <T>
  *            type of object returned by the expression
  */
-public class BindingModel<R, T> implements IModel<T>
-{
-    private final Binding<T> binding;
-    private final IModel<R> root;
+public class BindingModel<R, T> implements IModel<T> {
+	private final Binding<T> binding;
+	private final IModel<R> root;
 
-    /**
-     * Constructor
-     * 
-     * @param binding
-     */
-    public BindingModel(Binding<T> binding)
-    {
-        this.binding = binding;
-        root = null;
-    }
+	/**
+	 * Constructor
+	 * 
+	 * @param binding
+	 */
+	public BindingModel(Binding<T> binding) {
+		this.binding = binding;
+		root = null;
+	}
 
-    public BindingModel(IModel<R> root, BindingRoot<R, T> binding)
-    {
-        this.root = root;
-        this.binding = binding;
-    }
+	public BindingModel(IModel<R> root, BindingRoot<R, T> binding) {
+		this.root = root;
+		this.binding = binding;
+	}
 
-    /** {@inheritDoc} */
-    @SuppressWarnings("unchecked")
-    @Override
-    public T getObject()
-    {
-        if (root == null)
-        {
-            return binding.get();
-        }
-        else
-        {
-            return ((BindingRoot<R, T>)binding).getWithRoot(root.getObject());
-        }
-    }
+	/** {@inheritDoc} */
+	@SuppressWarnings("unchecked")
+	@Override
+	public T getObject() {
+		if (root == null) {
+			return binding.getSafely();
+		}
 
-    /** {@inheritDoc} */
-    @Override
-    @SuppressWarnings("unchecked")
-    public void setObject(T object)
-    {
-        if (root == null)
-        {
-            binding.set(object);
-        }
-        else
-        {
-            ((BindingRoot<R, T>)binding).setWithRoot(root.getObject(), object);
-        }
-    }
+		Object rootObject = root.getObject();
+		
+		if (rootObject == null) {
+			return null;
+		}
 
-    /** {@inheritDoc} */
-    public void detach()
-    {
-        if (root != null)
-        {
-            root.detach();
-        }
-    }
-    
-    /**
-     * Convenience method to convert a {@link Binding} into a {@link BindingModel}
-     * 
-     * @param <T>
-     * @param binding
-     * @return binding model for {@code binding}
-     */
-    public static <R, T> IModel<T> of(Binding<T> binding)
-    {
-        return new BindingModel<R, T>(binding);
-    }
+		BindingRoot<R, T> bindingRoot = (BindingRoot<R, T>) binding;
+		return bindingRoot.getSafelyWithRoot(root.getObject());
+	}
 
-    /**
-     * Convenience method to convert a {@link BindingRoot} into a {@link BindingRootModel}
-     * 
-     * @param <T>
-     * @param binding
-     * @return binding model for {@code binding}
-     */
-    public static <R, T> IModel<T> of(IModel<R> root, BindingRoot<R, T> binding)
-    {
-        return new BindingModel<R, T>(root, binding);
-    }
+	/** {@inheritDoc} */
+	@Override
+	@SuppressWarnings("unchecked")
+	public void setObject(T object) {
+		if (root == null) {
+			binding.set(object);
+		} else {
+			((BindingRoot<R, T>) binding).setWithRoot(root.getObject(), object);
+		}
+	}
+
+	/** {@inheritDoc} */
+	public void detach() {
+		if (root != null) {
+			root.detach();
+		}
+	}
+
+	/**
+	 * Convenience method to convert a {@link Binding} into a
+	 * {@link BindingModel}
+	 * 
+	 * @param <T>
+	 * @param binding
+	 * @return binding model for {@code binding}
+	 */
+	public static <R, T> IModel<T> of(Binding<T> binding) {
+		return new BindingModel<R, T>(binding);
+	}
+
+	/**
+	 * Convenience method to convert a {@link BindingRoot} into a
+	 * {@link BindingRootModel}
+	 * 
+	 * @param <T>
+	 * @param binding
+	 * @return binding model for {@code binding}
+	 */
+	public static <R, T> IModel<T> of(IModel<R> root, BindingRoot<R, T> binding) {
+		return new BindingModel<R, T>(root, binding);
+	}
 
 }
