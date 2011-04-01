@@ -3,7 +3,7 @@
  <modelVersion>4.0.0</modelVersion>
  <groupId>org.bindgen.wicket</groupId>
  <artifactId>bindgen-wicket-parent</artifactId>
- <version>1.1-SNAPSHOT</version>
+ <version>1.1</version>
  <packaging>pom</packaging>
  <name>Bindgen-Wicket Parent Project</name>
  <modules>
@@ -11,9 +11,9 @@
   <module>bindgen-wicket-examples</module>
  </modules>
  <scm>
-  <connection>scm:svn:http://bindgen-wicket.googlecode.com/svn/tags/bindgen-wicket-parent-1.0</connection>
-  <developerConnection>scm:svn:https://bindgen-wicket.googlecode.com/svn/tags/bindgen-wicket-parent-1.0</developerConnection>
-  <url>http://bindgen-wicket.googlecode.com/svn/tags/bindgen-wicket-parent-1.0</url>
+  <connection>scm:svn:http://bindgen-wicket.googlecode.com/svn/tags/bindgen-wicket-parent-1.1</connection>
+  <developerConnection>scm:svn:https://bindgen-wicket.googlecode.com/svn/tags/bindgen-wicket-parent-1.1</developerConnection>
+  <url>http://bindgen-wicket.googlecode.com/svn/tags/bindgen-wicket-parent-1.1</url>
  </scm>
  <licenses>
   <license>
